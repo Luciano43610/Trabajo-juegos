@@ -17,3 +17,7 @@ main(){
             printf("----------------------------------------------------------------------------------\n\n");
             menor=numIngresado;
             puntaje--;
+			}
+			if(numIngresado>numSecreto){
+            printf("\nEl numero ingresado es mayor. \nNUEVO RANGO : %d - %d\n\n", menor, numIngresado);
+            printf("----------------------------------------------------------------------------------\n\n");
