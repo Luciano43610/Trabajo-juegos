@@ -27,3 +27,14 @@ main(){
         if(numIngresado==numSecreto){
             printf("Acertaste! Puntaje obtenido: %d", puntaje);
             i=11;
+            }
+            if(i%3==0){
+            system("pause");
+            system("cls");
+        }
+    }
+    if(puntaje==0){
+        printf("Perdiste!\nEl numero secreto es: %d", numSecreto);
+    }
+}
+        
