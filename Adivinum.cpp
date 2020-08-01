@@ -10,7 +10,14 @@ int i=1,s1=0,s2=0,s3=0,s4=0;
 int n1=0, n2=0,n3=0,n4=0;
 int puntuacion=10;
 srand(time(NULL));
-
+printf("\n***********************************\n");
+printf("\nBienvenido al juego Adivinum\n");
+printf("\n***********************************\n");
+printf("\n____________________________________________\n");
+printf("\nPresione una tecla para empezar a jugar\n");
+printf("\n____________________________________________\n");
+system("Pause");
+system ("cls");
 do{
 numAleatorio=(rand()%9000)+1000;
 //printf("Numero generado: %d\n", numAleatorio);
@@ -60,7 +67,10 @@ for(int i=1; i<11; i++){
 		puntuacion--;
 	}
 	if(puntuacion==0){
+		printf("\n\n**********************************************\n\n");
+		printf("\nPerdiste que lastima, vuelve a intentarlo\n");
 		printf("\n\nEl numero es: %d", numAleatorio);
+		printf("\n\n**********************************************\n\n");
 	}
 	numIgual=0;
 	numMismaPos=0;
@@ -69,9 +79,7 @@ for(int i=1; i<11; i++){
 		printf("\nEl numero ingresado no es de 4 cifras.");
 		i--;
 	}
-	
 }
-
 	}
 void separar(int n, int &s1, int &s2, int &s3, int &s4){
 	s1=n/1000;
@@ -79,6 +87,5 @@ void separar(int n, int &s1, int &s2, int &s3, int &s4){
 	s3=(n-(s1*1000+s2*100))/10;
 	s4=(n-(s1*1000+s2*100+s3*10));
 }
-  
 
 
