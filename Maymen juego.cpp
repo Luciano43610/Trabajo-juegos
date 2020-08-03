@@ -6,9 +6,15 @@ main(){
     int numSecreto=0, numIngresado=0, mayor=0, menor=0, puntaje=10;
     int i=1;
     srand(time(NULL));
-    numSecreto=(rand()%999)+1;
+    numSecreto=(rand()%999)+1; //GENERA UN NUMERO ALEATORIO ENTRE 1 y 999
     menor=1;
     mayor=999;
+    printf("\n\n________________________________\n\n");
+    printf("\n\nBienvenido al juego Maymen\n\n");
+    printf("\n\n________________________________\n\n");
+    printf("\n--------Presione una tecla para empezar a jugar---------------\n\n");
+    system("pause");
+    system("cls");
     for(i=1; i<11; i++){
         printf("Intento numero [%d]: ", (i), numIngresado);
         scanf("%d", &numIngresado);
@@ -17,24 +23,29 @@ main(){
             printf("----------------------------------------------------------------------------------\n\n");
             menor=numIngresado;
             puntaje--;
-			}
-			if(numIngresado>numSecreto){
+        }
+        if(numIngresado>numSecreto){
             printf("\nEl numero ingresado es mayor. \nNUEVO RANGO : %d - %d\n\n", menor, numIngresado);
             printf("----------------------------------------------------------------------------------\n\n");
-              mayor=numIngresado;
+            mayor=numIngresado;
             puntaje--;
         }
         if(numIngresado==numSecreto){
+        	printf("\n**************************\n");
+        	printf("\nFelicidades ganaste\n");
+        	printf("\n**************************\n\n");
             printf("Acertaste! Puntaje obtenido: %d", puntaje);
             i=11;
-            }
-            if(i%3==0){
+        }
+        if(i%3==0){
             system("pause");
             system("cls");
         }
     }
     if(puntaje==0){
-        printf("Perdiste!\nEl numero secreto es: %d", numSecreto);
+    	printf("\n///////////////////////////////////////\n");
+    	printf("\nQue lastima perdiste, prueba de nuevo!!!!!\n");
+    	printf("\n///////////////////////////////////////\n\n");
+        printf("\nEl numero secreto es: %d", numSecreto);
     }
 }
-        
