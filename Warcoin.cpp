@@ -8,7 +8,8 @@ La cantidad inicial de monedas que tendrá la pila.*/
 #include<time.h>
 main(){
 	
-	int ingre1,ingre2,num,azar,retUsu;       
+	int ingre1,ingre2,num,azar,retUsu,cant=0;
+	int cpu,cant2=0;       
 	
 	printf(" WARCOIN \t\n ======= ");
 	printf("\nIngrese la cantidad Minima de Monedas que se pueden Retirar:");
@@ -24,7 +25,7 @@ main(){
 		printf("\nLa cantidad Maxima de Monedas que se pueden Retirar:%d",ingre2);
 		srand(time(NULL));
 	
-		num=(rand()%49)+10;
+		num=(rand()%40)+11;
 		
 		printf("\nLa cantidad inicial de monedas en la pila es:%d",num);
 		srand(time(NULL));
@@ -32,18 +33,27 @@ main(){
 		printf("\nAleatoriamente se Eligira quien inicia el juego es ==>");
 		
 			if(azar==1){
-				printf("\tEl Usuario.");
-				do {
-				scanf("%d",retUsu);	
-				}
-				while(retUsu>=ingre1 || retUsu<=ingre2);{
-				printf("\nIngresa la cantidad de monedas a eliminar:%d",retUsu);	
-				}
-				
+				printf("\tEl Usuario: ");
+				scanf("%d",&retUsu);
+			if(retUsu>=ingre1 && retUsu<=ingre2){
+				printf("La cantidad de monedas a eliminar:\t %d", retUsu);
+				cant=num-retUsu;
+				printf("\nLas Monedas que Quedan son:%d",cant);
+			}
+			else{
+			printf("ERROR: se deben desapilar entre %d y %d monedas.",ingre1,ingre2);
+			}
+			
 				
 		}
 			else{
 				printf("\tLa Computadora");
+				srand(time(NULL));
+				cpu=ingre1+rand()%(ingre2-ingre1);
+				printf("La computadora saco %d monedas de la pila",cpu);
+				cant2=num-cpu;
+				printf("\nLas Monedas que Quedan son:%d",cant2);
+			
 		}
 	
 
