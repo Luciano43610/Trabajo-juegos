@@ -31,3 +31,26 @@ main(){
 	azar=(rand()%2)+1;
 	printf("\nInicia la partida ==> ");
     cantMonedas=num;
+    do{
+        if(azar==1){
+            printf("EL USUARIO");
+            printf("\nIngrese la cantidad de monedas a eliminar: ");
+            scanf("%d",&retUsu);
+            if(retUsu>=rangoMin && retUsu<=rangoMax){
+
+                cantMonedas-=retUsu;
+			}
+            else{
+                printf("\nERROR: se deben desapilar entre %d y %d monedas.",rangoMin,rangoMax);
+            }
+            printf("\n\n");
+            azar=2;
+        }
+        else{
+            printf("LA COMPUTADORA \n");
+            srand(time(NULL));
+            retPc=rangoMin+(rand()%(rangoMax-rangoMin));
+            printf("La computadora saco %d monedas de la pila",retPc);
+            cantMonedas-=retPc;
+            printf("\n\n");
+            azar=1;
