@@ -54,3 +54,15 @@ main(){
             cantMonedas-=retPc;
             printf("\n\n");
             azar=1;
+                }
+    }while(cantMonedas>=rangoMin);
+
+    if(azar==1){
+        printf("\n\n~~~~~LA COMPUTADORA GANO~~~~~");
+        printf("\nPuntaje: 0");
+    }
+    else{
+        printf("\n\n~~~~~EL USUARIO GANO~~~~~");
+        printf("\nPuntaje: 5");
+    }
+}
