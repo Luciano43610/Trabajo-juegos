@@ -24,7 +24,7 @@ void mostrarVidas(int v);
 char palabra[30];
 char palabraCompleta[30];
 char letraErronea[30];
-int longitud=0, puntos=0, vidas=0, intentos=1, contador=0;
+int longitud=0, puntos=0, vidas=0, intentos=1, contador=0,puntajeObtenido=0;
 
 main(){
     int juego=0, seguir=0;
@@ -293,12 +293,13 @@ void warcoin(){
 //funciones ahorcadito
 void ahorcadito(){
     char letraI, letra;
-    int i=0, puntajeObtenido=0;
+    int i=0;
     int c=0;
     longitud=0;
     intentos=1;
     puntos=0;
     vidas=0;
+    puntajeObtenido=0;
     printf("~~~~~~~INGRESE 0 PARA TERMINAR~~~~~~~\n\n\nIngrese la palabra letra por letra (LETRAS MAYUSCULAS): \n");
     _flushall();
     while(letraI!='0'){
@@ -332,7 +333,7 @@ void ahorcadito(){
         IngresoLt(letra);
         if(puntos==longitud){
             vidas=12;
-            puntajeObtenido=(50-(2*vidas));
+            puntajeObtenido=(50-(2*puntajeObtenido));
             printf("\n\nPuntos obtenidos: %d", puntajeObtenido);
             printf("\n*GANO*");
         }
@@ -370,6 +371,7 @@ void IngresoLt(char letra){
     if(!coincide){
         vidas++;
         intentos++;
+        puntajeObtenido++;
         letraErronea[vidas]=letra;
         for(int i=0; i<vidas; i++){
             if(letraErronea[vidas]==letraErronea[i]){
